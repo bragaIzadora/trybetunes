@@ -11,7 +11,6 @@ function App() {
         <Routes>
           <Route path="/" element={ <Login /> } />
           <Route path="/search" element={ <Search /> } />
-          <Route path="/album/:id" element={ <Album /> } />
         </Routes>
       </div>
     </div>
