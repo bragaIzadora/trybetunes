@@ -44,10 +44,7 @@ function Search() {
 
   const displayAlbums = searchedArtist && (
     <div>
-      <h2>
-        Resultado de álbuns de:
-        {searchedArtist}
-      </h2>
+      <h2>{`Resultado de álbuns de: ${searchedArtist}`}</h2>
       {albums.map((album) => (
         <div key={ album.collectionId }>
           <p>{album.collectionName}</p>
