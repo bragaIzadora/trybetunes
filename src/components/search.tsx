@@ -36,14 +36,33 @@ function Search() {
     setSearchTerm(event.target.value);
   };
 
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    handleSearch();
+    setSearchTerm('');
+  };
+
+  const displayAlbums = searchedArtist && (
+    <>
+      {/* eslint-disable-next-line */}
+      <p>Resultado de álbuns de: {searchedArtist}</p>
+      {albums.map((album) => (
+        <div key={ album.collectionId }>
+          <p>{album.collectionName}</p>
+          <Link
+            to={ `/album/${album.collectionId}` }
+            data-testid={ `link-to-album-${album.collectionId}` }
+          >
+            Ver Álbum
+          </Link>
+        </div>
+      ))}
+    </>
+  );
+
   return (
     <div>
-      <form
-        onSubmit={ (e) => {
-          e.preventDefault();
-          handleSearch();
-        } }
-      >
+      <form onSubmit={ handleSubmit }>
         <input
           type="text"
           value={ searchTerm }
@@ -62,29 +81,12 @@ function Search() {
 
       {loading && <Loading />}
 
-      {noAlbumsFound ? (
-        <p>Nenhum álbum foi encontrado</p>
-      ) : (
-        <>
-          {searchedArtist && (
-            <p>
-              Resultado de álbuns de:
-              {searchedArtist}
-            </p>
-          )}
+      {noAlbumsFound && !loading && <p>Nenhum álbum foi encontrado</p>}
 
-          {albums.map((album) => (
-            <div key={ album.collectionId }>
-              <p>{album.collectionName}</p>
-              <Link
-                to={ `/album/${album.collectionId}` }
-                data-testid={ `link-to-album-${album.collectionId}` }
-              >
-                Ver Álbum
-              </Link>
-            </div>
-          ))}
-        </>
+      {albums.length > 0 && !noAlbumsFound && !loading && (
+        <div>
+          {displayAlbums}
+        </div>
       )}
     </div>
   );
