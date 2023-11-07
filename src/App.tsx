@@ -1,4 +1,5 @@
-import { Route, Routes } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import Layout from './components/layout';
 import Login from './components/login';
 import Search from './components/search';
 import Album from './components/album';
@@ -6,14 +7,17 @@ import Album from './components/album';
 function App() {
   return (
     <div>
-      <p>Trybetunes</p>
-      <div>
-        <Routes>
-          <Route path="/" element={ <Login /> } />
+      <p>TrybeTunes</p>
+      <Routes>
+        <Route path="/" element={ <Login /> } />
+        <Route
+          path="/"
+          element={ <Layout /> }
+        >
           <Route path="/search" element={ <Search /> } />
           <Route path="/album/:id" element={ <Album /> } />
-        </Routes>
-      </div>
+        </Route>
+      </Routes>
     </div>
   );
 }
