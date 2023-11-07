@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
 import Loading from './loading';
 
 function Login() {
   const [userName, setUserName] = useState('');
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const validName = (name: string) => {
     const minimum = name.length >= 3;
@@ -23,6 +25,7 @@ function Login() {
       try {
         await createUser({ name: userName });
         setLoading(false);
+        navigate('/search');
       } catch (error) {
         setLoading(false);
       }

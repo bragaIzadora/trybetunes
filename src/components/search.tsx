@@ -10,7 +10,6 @@ function Search() {
   const [albums, setAlbums] = useState<AlbumType[]>([]);
   const [searchedArtist, setSearchedArtist] = useState('');
   const [noAlbumsFound, setNoAlbumsFound] = useState(false);
-
   const handleSearch = async () => {
     setLoading(true);
 
