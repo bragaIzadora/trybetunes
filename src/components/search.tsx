@@ -43,9 +43,11 @@ function Search() {
   };
 
   const displayAlbums = searchedArtist && (
-    <>
-      {/* eslint-disable-next-line */}
-      <p>Resultado de álbuns de: {searchedArtist}</p>
+    <div>
+      <h2>
+        Resultado de álbuns de:
+        {searchedArtist}
+      </h2>
       {albums.map((album) => (
         <div key={ album.collectionId }>
           <p>{album.collectionName}</p>
@@ -57,7 +59,7 @@ function Search() {
           </Link>
         </div>
       ))}
-    </>
+    </div>
   );
 
   return (
