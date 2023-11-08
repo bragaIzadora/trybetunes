@@ -23,7 +23,7 @@ function MusicCard({ music }: MusicCardProps) {
         controls
       >
         <track kind="captions" />
-        O seu navegador não suporta o elemento 
+        O seu navegador não suporta o elemento
         <code>
           audio
         </code>
