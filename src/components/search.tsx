@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import { AlbumType } from '../types';
 import Loading from './loading';
+import './search.css';
 
 function Search() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -42,17 +43,20 @@ function Search() {
   };
 
   const displayAlbums = searchedArtist && (
-    <div>
+    <div className="results">
       <h2>{`Resultado de álbuns de: ${searchedArtist}`}</h2>
       {albums.map((album) => (
         <div key={ album.collectionId }>
-          <p>{album.collectionName}</p>
-          <Link
-            to={ `/album/${album.collectionId}` }
-            data-testid={ `link-to-album-${album.collectionId}` }
-          >
-            Ver Álbum
-          </Link>
+          <p className="nameSearch">
+            { album.collectionName }
+            <Link
+              className="Album"
+              to={ `/album/${album.collectionId}` }
+              data-testid={ `link-to-album-${album.collectionId}` }
+            >
+              Ver Álbum
+            </Link>
+          </p>
         </div>
       ))}
     </div>
@@ -60,18 +64,20 @@ function Search() {
 
   return (
     <div>
-      <form onSubmit={ handleSubmit }>
+      <form onSubmit={handleSubmit} className="inputSearch">
         <input
           type="text"
-          value={ searchTerm }
-          onChange={ handleInputChange }
+          value={searchTerm}
+          onChange={handleInputChange}
           placeholder="Pesquisar artista ou banda"
           data-testid="search-artist-input"
-          disabled={ loading }
+          disabled={loading}
+          className="input inputS"
         />
         <button
-          disabled={ searchTerm.length < 2 || loading }
+          disabled={searchTerm.length < 2 || loading}
           data-testid="search-artist-button"
+          className="buttonS"
         >
           Pesquisar
         </button>

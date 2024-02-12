@@ -7,7 +7,6 @@ import Album from './components/album';
 function App() {
   return (
     <div>
-      <p>TrybeTunes</p>
       <Routes>
         <Route path="/" element={ <Login /> } />
         <Route

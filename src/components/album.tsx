@@ -4,6 +4,7 @@ import getMusics from '../services/musicsAPI';
 import MusicCard from './musicCard';
 import { AlbumType, SongType } from '../types';
 import Loading from './loading';
+import './search.css';
 
 interface AlbumData {
   album: AlbumType;
@@ -49,7 +50,7 @@ function Album() {
   const { album, songs } = albumData;
 
   return (
-    <div>
+    <div className="results resultsSongs">
       <h2 data-testid="artist-name">{album.artistName}</h2>
       <h3 data-testid="album-name">{album.collectionName}</h3>
 

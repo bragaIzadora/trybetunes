@@ -21,26 +21,29 @@ function MusicCard({ music }: MusicCardProps) {
 
   return (
     <div>
-      <p>{trackName}</p>
-      <audio data-testid="audio-component" src={ previewUrl } controls>
-        <track kind="captions" />
-        O seu navegador não suporta o elemento
-        <code>audio</code>
-        .
-      </audio>
-      <label data-testid={ `checkbox-music-${trackId}` }>
-        <input
-          type="checkbox"
-          checked={ isFavorited }
-          onChange={ handleCheckboxChange }
-          style={ { display: 'none' } }
-        />
-        <img
-          src={ isFavorited ? checkedHeart : emptyHeart }
-          alt="favorite"
-          style={ { width: '20px', height: '20px' } }
-        />
-      </label>
+      <div>
+        <p>{trackName}</p>
+        <audio data-testid="audio-component" src={ previewUrl } controls>
+          <track kind="captions" />
+          O seu navegador não suporta o elemento
+          <code>audio</code>
+          .
+        </audio>
+        <label data-testid={ `checkbox-music-${trackId}` }>
+          <input
+            type="checkbox"
+            checked={ isFavorited }
+            onChange={ handleCheckboxChange }
+            style={ { display: 'none' } }
+          />
+          <img
+            className="favorite"
+            src={ isFavorited ? checkedHeart : emptyHeart }
+            alt="favorite"
+            style={ { width: '20px', height: '20px' } }
+          />
+        </label>
+      </div>
     </div>
   );
 }

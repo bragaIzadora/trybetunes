@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
 import Loading from './loading';
+import './login.css';
 
 function Login() {
   const [userName, setUserName] = useState('');
@@ -36,14 +37,25 @@ function Login() {
 
   return (
     <div>
-      <form onSubmit={ handleSubmit }>
+      <div className="title">
+        <h1>TrybeTunes </h1>
+        <img src="Sound-Image.png" alt="fequency" className="frequency" />
+      </div>
+      <form onSubmit={ handleSubmit } className="form">
+        <h1 className="h1">Login</h1>
         <input
+          className="input"
           type="text"
           data-testid="login-name-input"
+          placeholder="digite seu email"
           value={ userName }
           onChange={ handleInputChange }
         />
-        <button disabled={ !validName(userName) } data-testid="login-submit-button">
+        <button
+          disabled={ !validName(userName) }
+          data-testid="login-submit-button"
+          className="button"
+        >
           Entrar
         </button>
         {loading && <Loading />}

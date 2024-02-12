@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
+import './header.css';
 
 function Header() {
   const [userName, setUserName] = useState('');
@@ -22,18 +23,41 @@ function Header() {
   }, []);
 
   if (loading) {
-    return <p>Carregando...</p>;
+    return <p className="loading">Carregando...</p>;
   }
 
   return (
-    <header data-testid="header-component">
-      <NavLink to="/search" data-testid="link-to-search">Search</NavLink>
-      <NavLink to="/favorites" data-testid="link-to-favorites">Favorites</NavLink>
-      <NavLink to="/profile" data-testid="link-to-profile">Profile</NavLink>
-      <p data-testid="header-user-name">
+    <header data-testid="header-component" className="aside">
+      <h1 className="h1">TrybeTunes</h1>
+      <p data-testid="header-user-name" className="email">
         Welcome,
         {userName}
       </p>
+      {/* <img src="Sound-Image.png" alt="" className="frequency" /> */}
+      <NavLink
+        to="/search"
+        data-testid="link-to-search"
+        className="links"
+      >
+        <img src="loupe.png" alt="Search" className="linkImg" />
+        Search
+      </NavLink>
+      <NavLink
+        to="/favorites"
+        data-testid="link-to-favorites"
+        className="links"
+      >
+        <img src="favorites.png" alt="Favorites" className="linkImg" />
+        Favorites
+      </NavLink>
+      <NavLink
+        to="/profile"
+        data-testid="link-to-profile"
+        className="links"
+      >
+        <img src="perfilGrey.png" alt="Profile" className="linkImg" />
+        Profile
+      </NavLink>
     </header>
   );
 }
