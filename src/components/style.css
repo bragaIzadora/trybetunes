@@ -1,0 +1,170 @@
+.input {
+    width: 400px;
+    height: 40px;
+    border-radius: 100px;
+    border: 1px;
+    background-color: rgb(40, 141, 203);
+    color: white;
+    margin-bottom: 5px;
+  }
+  
+  .form {
+    display: flex;
+    width: 750px;
+    height: 450px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 1);
+    margin: auto;
+    margin-top: auto;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+  }
+  
+  .button {
+    width: 400px;
+    height: 40px;
+    border-radius: 100px;
+    background-color: rgb(40, 141, 203);
+    color: white;
+    margin-bottom: 80px;
+  }
+  
+  .title {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 55px;
+    left: 50%;
+  }
+  
+  .frequency {
+    width: 300px;
+  }
+  
+  .h1 {
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    color: rgb(40, 141, 203);
+    font-size: 50px;
+  }
+  
+  .loading {
+    width: 400px;
+    color: gray;
+  }
+
+  .aside {
+    width: 400px;
+    background-color: white;
+    color: rgb(40, 141, 203);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: sticky; /* Alterado de 'fixed' para 'sticky' */
+    top: 0; /* Adicionado para que o header fique fixo no topo da página ao rolar */
+}
+
+.frequency {
+    width: 300px;
+    margin-left: 50px;
+}
+
+.links {
+    font-size: 40px;
+    width: 400px;
+    height: 40px;
+    padding-left: 60px;
+    margin-bottom: 20px;
+    text-decoration: none; 
+    color: inherit;
+}
+
+.links:hover {
+    color: black;
+}
+
+.links img {
+    vertical-align: -4px;
+}
+
+.linkImg {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.h1 {
+    font-size: 40px;
+}
+
+.email {
+    font-size: 20px;
+    margin-left: 60px;
+    margin-bottom: 200px;
+}
+
+.loading2 {
+    width: 400px;
+    font-size: 50px;
+    color: white;
+}
+
+.inputS {
+    background-color: white;
+    color: rgb(40, 141, 203);
+}
+
+input::placeholder {
+    text-indent: 10px;
+    padding: 10px 0;
+    color:gray;
+}
+
+.buttonS {
+  margin-right: 45vh;
+  width: 200px;
+  height: 40px;
+  border-radius: 100px;
+  background-color: rgb(40, 141, 203);
+  color: white;
+  margin-bottom: 80px;
+}
+
+.results {
+    height: calc(90vh - 50px); /* Ajuste o valor conforme necessário */
+    overflow-y: auto; /* Faz com que a área de resultados seja rolável */
+    color: white;
+    font-size: 30px;
+}
+
+.results::-webkit-scrollbar {
+    display: none; /* Esconde a barra de rolagem no Chrome, Safari e Edge */
+}
+
+.nameSearch {
+    color: white;
+    font-size: 30px;
+    text-decoration: dashed;
+}
+
+.resultsSongs {
+    margin-right: 40%;
+}
+
+.favorite {
+    padding-left: 10px;
+    padding-bottom: 15px;
+}
+
+.Album {
+    text-decoration: none;
+    font-size: 20px;
+    padding-left: 10px;
+}
+.div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

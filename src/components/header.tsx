@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
-import './header.css';
+import './style.css';
 
 function Header() {
   const [userName, setUserName] = useState('');
@@ -23,7 +23,7 @@ function Header() {
   }, []);
 
   if (loading) {
-    return <p className="loading">Carregando...</p>;
+    return <p className="loading2">Carregando...</p>;
   }
 
   return (

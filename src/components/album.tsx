@@ -4,7 +4,7 @@ import getMusics from '../services/musicsAPI';
 import MusicCard from './musicCard';
 import { AlbumType, SongType } from '../types';
 import Loading from './loading';
-import './search.css';
+import './style.css';
 
 interface AlbumData {
   album: AlbumType;

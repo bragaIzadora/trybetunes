@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import { AlbumType } from '../types';
 import Loading from './loading';
-import './search.css';
+import './style.css';
 
 function Search() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -64,18 +64,18 @@ function Search() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit} className="inputSearch">
+      <form onSubmit={ handleSubmit } className="inputSearch">
         <input
           type="text"
-          value={searchTerm}
-          onChange={handleInputChange}
+          value={ searchTerm }
+          onChange={ handleInputChange }
           placeholder="Pesquisar artista ou banda"
           data-testid="search-artist-input"
-          disabled={loading}
+          disabled={ loading }
           className="input inputS"
         />
         <button
-          disabled={searchTerm.length < 2 || loading}
+          disabled={ searchTerm.length < 2 || loading }
           data-testid="search-artist-button"
           className="buttonS"
         >
